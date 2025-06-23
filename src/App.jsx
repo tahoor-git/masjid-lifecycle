@@ -8,9 +8,10 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
-import { Donations } from "./Pages/Donations";
-import { Events } from "./Pages/Events";
 import { Users } from "./Pages/Users";
+import { Events } from "./Pages/Events";
+import { Donations } from "./Pages/Donations";
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -56,8 +57,14 @@ function App() {
                             element={<Navigate to="/Dashboard" replace />}
                           />
                           <Route path="/Dashboard" element={<Dashboard />} />
-                          <Route path="/users" element={<Users />} />
-                          <Route path="/campaign" element={<Events />} />
+                          <Route
+                            path="/users"
+                            element={<Users />}
+                          />
+                          <Route
+                            path="/campaign"
+                            element={<div>Campaign Content</div>}
+                          />
                           <Route
                             path="/agency"
                             element={<div>Agency Content</div>}
@@ -66,7 +73,10 @@ function App() {
                             path="/quotation"
                             element={<div>Quotation Content</div>}
                           />
-                          <Route path="/payment" element={<Donations />} />
+                          <Route
+                            path="/payment"
+                            element={<div>Payment Content</div>}
+                          />
                           <Route
                             path="/configurations"
                             element={<div>Configurations Content</div>}
@@ -74,6 +84,14 @@ function App() {
                           <Route
                             path="/reports"
                             element={<div>Reports Content</div>}
+                          />
+                          <Route
+                            path="/events"
+                            element={<Events />}
+                          />
+                          <Route
+                            path="/donations"
+                            element={<Donations />}
                           />
                         </Routes>
                       </main>
