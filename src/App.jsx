@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Users } from "./Pages/Users";
 import { Events } from "./Pages/Events";
 import { Donations } from "./Pages/Donations";
+import { Reports } from "./Pages/Reports";
 
 
 function App() {
@@ -83,7 +84,7 @@ function App() {
                           />
                           <Route
                             path="/reports"
-                            element={<div>Reports Content</div>}
+                            element={<Reports />}
                           />
                           <Route
                             path="/events"
